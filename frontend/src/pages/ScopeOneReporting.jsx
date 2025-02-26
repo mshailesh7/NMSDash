@@ -20,25 +20,25 @@ const ScopeOneReporting = () => {
     },
     {
       id: 3,
-      name: 'Generator Fuel',
-      bgColor: 'bg-green-500',
+      // name: 'Generator Fuel',
+      bgColor: 'bg-blue-500',
       info: 'Emissions from fuel used in backup power generators',
     },
     {
       id: 4,
-      name: 'Refrigerant Leakage',
+      // name: 'Refrigerant Leakage',
       bgColor: 'bg-red-400',
       info: 'Emissions from refrigerant gases leaking from cooling systems',
     },
     {
       id: 5,
-      name: 'Process Emissions',
+      // name: 'Process Emissions',
       bgColor: 'bg-yellow-200',
       info: 'Direct emissions from manufacturing processes and chemical reactions',
     },
     {
       id: 6,
-      name: 'Other Direct Emissions',
+      // name: 'Other Direct Emissions',
       bgColor: 'bg-purple-200',
       info: 'Other direct emissions not covered in the above categories',
     },
@@ -63,15 +63,17 @@ const ScopeOneReporting = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {emissionTypes.map((type) => (
+            {emissionTypes.map((type, index) => (
               <div
                 key={type.id}
-                className={`${type.bgColor} rounded-lg p-6 h-32 flex items-center justify-center relative`}
+                className={`${type.bgColor} rounded-lg p-6 h-40 flex items-center justify-center relative`}
               >
-                <Tooltip title={type.info} arrow placement="top">
-                  <Info className="absolute top-2 right-2 w-5 h-5 text-gray-700 cursor-help" />
-                </Tooltip>
-                <span className="text-center font-medium cursor-pointer">
+                {index < 2 && (
+                  <Tooltip title={type.info} arrow placement="top">
+                    <Info className="absolute top-2 right-2 w-5 h-5 text-gray-700 cursor-help" />
+                  </Tooltip>
+                )}
+                <span className={`text-center font-medium ${index < 3 ? "cursor-pointer" : ""}`}>
                   {type.name}
                 </span>
               </div>

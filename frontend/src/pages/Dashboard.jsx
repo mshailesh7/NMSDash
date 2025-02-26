@@ -66,7 +66,7 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 pt-3">
+              {/* <div className="border-t border-gray-200 pt-3">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-700">Generate Emissions Report</span>
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@ const Dashboard = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </div>
+              </div> */}
 
               <div className="border-t border-gray-200 pt-3">
                 <div className="flex items-center justify-between">
