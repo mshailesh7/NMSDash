@@ -15,19 +15,22 @@ const ScopeCard = ({ title, description, data }) => {
   ];
 
   const handleAddClick = () => {
+    let defaultScope = '';
     switch (title) {
       case 'Scope I':
-        navigate('/scope-one/reporting');
+        defaultScope = 'scope1';
         break;
       case 'Scope II':
-        navigate('/scope-two/reporting');
+        defaultScope = 'scope2';
         break;
       case 'Scope III':
-        navigate('/scope-three/reporting');
+        defaultScope = 'scope3';
         break;
       default:
+        defaultScope = 'scope1';
         break;
     }
+    navigate(`/emissions/reporting?scope=${defaultScope}`);
   };
 
   const handleMonitorClick = () => {
@@ -47,8 +50,8 @@ const ScopeCard = ({ title, description, data }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
-      <div className="flex flex-col mb-6">
+    <div className="bg-white p-6 rounded-lg shadow-sm flex flex-col h-full">
+      <div className="flex flex-col flex-grow">
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
           <div className="flex gap-2">
@@ -102,7 +105,7 @@ const ScopeCard = ({ title, description, data }) => {
       </div>
 
       <button 
-        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-green-500 bg-white border border-green-500 rounded-lg hover:bg-green-500 hover:text-white transition-colors group"
+        className="mt-20 w-full flex items-center justify-center gap-2 px-4 py-2.5 text-green-500 bg-white border border-green-500 rounded-lg hover:bg-green-500 hover:text-white transition-colors group"
       >
         <span>Generate Insights</span>
         <Zap className="w-4 h-4 group-hover:animate-pulse" />
